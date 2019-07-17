@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import weather from './weather';
+import pullrequest from './pullrequest';
 
 export default function() {
     let api = Router();
 
-    api.use('/weather', weather);
+    api.use('/pullrequest', pullrequest);
 
     // perhaps expose some API metadata at the root
     api.get('/', (req, res) => {
