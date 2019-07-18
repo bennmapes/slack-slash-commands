@@ -99,7 +99,7 @@ const pickPeople = (day_index, days, remainingPeople, creation_attempt, output) 
     }
     // Randomly generate an index for the remaining people array.
     const date = moment().utc().startOf('isoWeek');
-    const random = seedrandom(date.milliseconds()*day_index+creation_attempt)(date.milliseconds()*day_index+creation_attempt);
+    const random = seedrandom(date.milliseconds()*(day_index+1)+creation_attempt)(date.milliseconds()*day_index+creation_attempt);
     let person_index = Math.floor(random*remainingPeople.length);
 
     // Make sure the person chosen does not have the current day blacklisted
