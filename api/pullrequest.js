@@ -97,11 +97,8 @@ const pickPeople = (day_index, days, remainingPeople, creation_attempt, output) 
     if(day_index >= days.length) {
         return output;
     }
-    // Randomly generate an index for the remaining people array.
-    const date = moment().utc().startOf('isoWeek');
-    const random = seedrandom(date.milliseconds()*(day_index+1)+creation_attempt)(date.milliseconds()*day_index+creation_attempt);
+    const random = genRandomSeed(day_index, creation_attempt);
     let person_index = Math.floor(random*remainingPeople.length);
-
     // Make sure the person chosen does not have the current day blacklisted
     if(remainingPeople[person_index].dayBlacklist && remainingPeople[person_index].dayBlacklist.includes(days[day_index])) {
         //  If we've tried a bunch of times to fill this day and it hasn't worked, restart the whole process.
@@ -124,5 +121,14 @@ const pickPeople = (day_index, days, remainingPeople, creation_attempt, output) 
         // Pick someone for the next day
         return pickPeople(++day_index, days, remainingPeople, creation_attempt, output);
     }
+}
+
+const genRandomSeed = (day_index, creation_attempt) => {
+    // Randomly generate an index for the remaining people array.
+    const date = moment().startOf('isoWeek');
+    const milis = date.toDate().getTime()
+    const seed = Math.floor(milis/2)*(day_index+1)+creation_attempt;
+    const random = seedrandom(seed)();
+    return random;
 }
  module.exports = router;
