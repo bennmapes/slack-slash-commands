@@ -25,6 +25,7 @@ const people = [
     },
     {
         name: "Benn",
+        dayBlacklist: [daysEnum.TUESDAY, daysEnum.WEDNESDAY, daysEnum.THURSDAY, daysEnum.FRIDAY]
     },
     {
         name: "Everet",
