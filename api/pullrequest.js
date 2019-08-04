@@ -5,7 +5,7 @@ import moment from 'moment';
 const router = Router();
 
 const daysEnum = {
-    MONDAY:  "Monday",
+    // MONDAY:  "Monday",
     TUESDAY: "Tuesday",
     WEDNESDAY: "Wednesday",
     THURSDAY: "Thursday",
