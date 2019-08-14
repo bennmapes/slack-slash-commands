@@ -5,7 +5,7 @@ import moment from 'moment';
 const router = Router();
 
 const daysEnum = {
-    // MONDAY:  "Monday",
+    MONDAY:  "Monday",
     TUESDAY: "Tuesday",
     WEDNESDAY: "Wednesday",
     THURSDAY: "Thursday",
@@ -25,7 +25,7 @@ const people = [
     },
     {
         name: "Benn",
-        dayBlacklist: [daysEnum.TUESDAY, daysEnum.WEDNESDAY, daysEnum.THURSDAY, daysEnum.FRIDAY]
+        dayBlacklist: []
     },
     {
         name: "Everet",
