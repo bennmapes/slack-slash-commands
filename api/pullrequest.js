@@ -11,6 +11,7 @@ const daysEnum = {
     THURSDAY: "Thursday",
     FRIDAY: "Friday"
 }
+const all = Object.values(daysEnum);
 const people = [
     {
         name: "Doug",
@@ -32,7 +33,7 @@ const people = [
     },
     {
         name: "Jason",
-        dayBlacklist: [daysEnum.TUESDAY],
+        dayBlacklist: all,
     },
 ]
 
