@@ -22,7 +22,7 @@ const people = [
     },
     {
         name: "Hardeep",
-        dayBlacklist: [daysEnum.TUESDAY]
+        dayBlacklist: [daysEnum.WEDNESDAY]
     },
     {
         name: "Benn",
@@ -33,7 +33,7 @@ const people = [
     },
     {
         name: "Jason",
-        dayBlacklist: all,
+        dayBlacklist: [],
     },
 ]
 
