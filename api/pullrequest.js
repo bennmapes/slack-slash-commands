@@ -104,8 +104,20 @@ const pickPeople = (day_index, days, remainingPeople, creation_attempt, output) 
     let person_index = Math.floor(random*remainingPeople.length);
     // Make sure the person chosen does not have the current day blacklisted
     if(remainingPeople[person_index].dayBlacklist && remainingPeople[person_index].dayBlacklist.includes(days[day_index])) {
+        const validPeopleLeft = remainingPeople.reduce((result, person) => {
+            if(result) return result;
+            if(!person.dayBlacklist ||  !person.dayBlacklist.includes(days[day_index])) {
+                return true;
+            }
+        }, false)
+        
+        // If no valid people left, reuse people.
+        if(!validPeopleLeft) {
+            remainingPeople = [...people];
+            return pickPeople(day_index, days, remainingPeople, creation_attempt, output);
+        }
         //  If we've tried a bunch of times to fill this day and it hasn't worked, restart the whole process.
-        if(creation_attempt >= 50) {
+        else if(creation_attempt >= 50) {
             remainingPeople = [...people];
             output = [];
             creation_attempt = 0;
