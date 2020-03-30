@@ -19,7 +19,7 @@ const people = [
     },
     {
         name: "Tom",
-        dayBlacklist: []
+        dayBlacklist: all
     },
     {
         name: "Hardeep",
