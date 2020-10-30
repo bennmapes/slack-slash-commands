@@ -33,6 +33,9 @@ const people = [
         name: "Everett",
     },
     {
+        name: "Bohdan",
+    },
+    {
         name: "Jason",
         dayBlacklist: [],
     },
