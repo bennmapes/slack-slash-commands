@@ -33,6 +33,10 @@ const people = [
         name: "Jordan",
         dayBlacklist: []
     },
+	{
+        name: "Akemi",
+        dayBlacklist: []
+    },
 ]
 
 router.get('/', function(req, res) {
