@@ -37,6 +37,10 @@ const people = [
         name: "Akemi",
         dayBlacklist: []
     },
+	{
+        name: "Ravan",
+        dayBlacklist: []
+    },
 ]
 
 router.get('/', function(req, res) {
